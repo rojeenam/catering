@@ -1,28 +1,63 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app>
+    <v-app-bar app color="primary" dark>
+      <div class="d-flex align-center">
+        <span class="mr-2 icon font-italic font-weight-medium">A</span>
+      </div>
+
+      <v-spacer></v-spacer>
+
+      <v-col class="justify-end">
+        <v-row class="justify-end">
+          <span>Araniko Catering & Rental Services</span>
+        </v-row>
+        <v-row class="justify-end">
+          <span>984-1247156</span>
+        </v-row>
+      </v-col>
+    </v-app-bar>
+
+    <v-content>
+      <Slider/>
+      <v-row class="ma-5">
+        <v-col cols="3">
+          <About/>
+        </v-col>
+        <v-col cols="6">Body</v-col>
+        <v-col cols="3">
+          <Contact/>
+        </v-col>
+      </v-row>
+    </v-content>
+    <Footer/>
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Slider from "./components/Slider";
+import About from "./components/About";
+import Contact from "./components/Contact";
+import Footer from "./components/Footer";
 
 export default {
-  name: 'App',
+  name: "App",
+
   components: {
-    HelloWorld
-  }
-}
+    Slider,
+    About,
+    Contact,
+    Footer
+  },
+
+  data: () => ({
+    //
+  })
+};
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style lang="css" scoped>
+.icon {
+  color: white;
+  font-size: 40px;
 }
 </style>
